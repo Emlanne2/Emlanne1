@@ -1,0 +1,69 @@
+-Create a database of spiritual authors and information about them
+ 
+ INSERT INTO authors (name, followers, books) VALUES ("Gabrielle Bernstein", 2223, 62);
+ INSERT INTO authors (name, followers, books) VALUES ("Thich Nhat Hanh", 10503, 868);
+ INSERT INTO authors (name, followers, books) VALUES ("Steve Chandler", 251, 118);
+ INSERT INTO authors (name, followers, books) VALUES ("Marianne Williamson", 2091, 344);
+ INSERT INTO authors (name, followers, books) VALUES ("Alan Cohen", 184, 169);
+ INSERT INTO authors (name, followers, books) VALUES ("Esther Hicks", 1211, 187);
+ INSERT INTO authors (name, followers, books) VALUES ("Pam Grout", 263, 54);
+ INSERT INTO authors (name, followers, books) VALUES ("Jen Sincero", 3297, 136);
+ INSERT INTO authors (name, followers, books) VALUES ("Walter Mischel", 83, 17);
+ INSERT INTO authors (name, followers, books) VALUES ("T. Colin Campbell", 518, 27);
+ INSERT INTO authors (name, followers, books) VALUES ("Mel Robbins", 1737, 18);
+ INSERT INTO authors (name, followers, books) VALUES ("Denise Duffield-Thomas", 215, 15);
+ INSERT INTO authors (name, followers, books) VALUES ("Jay Shetty", 1864, 9);
+ 
+ 
+ CREATE TABLE details (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    years_active INTEGER,
+    net_worth INTEGER,
+    rank INTEGER);
+ 
+ INSERT INTO details (years_active, net_worth, rank) VALUES (13, 7000000, 1);
+ INSERT INTO details (years_active, net_worth, rank) VALUES (60, 100000, 2);
+ INSERT INTO details (years_active, net_worth, rank) VALUES (20, 1700000, 3);
+ INSERT INTO details (years_active, net_worth, rank) VALUES (31, 2000000, 4);
+ INSERT INTO details (years_active, net_worth, rank) VALUES (27, 1000000, 5);
+ INSERT INTO details (years_active, net_worth, rank) VALUES (35, 10000000, 6);
+ INSERT INTO details (years_active, net_worth, rank) VALUES (7, 100000, 7);
+ INSERT INTO details (years_active, net_worth, rank) VALUES (10, 100000, 8);
+ INSERT INTO details (years_active, net_worth, rank) VALUES (55, 16000000, 9);
+ INSERT INTO details (years_active, net_worth, rank) VALUES (33, 1000000, 10);
+ INSERT INTO details (years_active, net_worth, rank) VALUES (12, 15000000, 11);
+ INSERT INTO details (years_active, net_worth, rank) VALUES (12, 4500000, 12);
+ INSERT INTO details (years_active, net_worth, rank) VALUES (4, 4000000, 13);
+ 
+ -Find out name, followers, books written 
+
+ SELECT * FROM authors;
+ 
+ -Find out years active, net worth, rank 
+
+ SELECT * FROM details;
+ 
+ 
+ -Find out who the top 5 highest paid motivational authors are
+ 
+ SELECT authors.name, details.net_worth
+ FROM authors
+ JOIN details
+ ON authors.id=details.id
+ WHERE net_worth < "16000001" 
+ AND net_worth > "4499999"
+ ORDER BY net_worth DESC;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
