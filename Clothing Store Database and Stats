@@ -1,0 +1,44 @@
+-Create a clothing store database
+
+CREATE TABLE clothes(id INTEGER PRIMARY KEY, price INTEGER, category TEXT, color TEXT, amount INTEGER, season TEXT);
+
+
+INSERT INTO clothes VALUES(1, "12", "pants", "blue", "5", "winter");
+INSERT INTO clothes VALUES(2, "15", "sweater", "green", "2", "winter");
+INSERT INTO clothes VALUES(3, "5", "tshirt", "black", "10", "summer");
+INSERT INTO clothes VALUES(4, "20", "cardigan", "pink", "1", "fall");
+INSERT INTO clothes VALUES(5, "8", "yoga pants", "gray", "10", "spring");
+INSERT INTO clothes VALUES(6, "25", "hoodie", "black", "10", "fall");
+INSERT INTO clothes VALUES(7, "22", "purse", "tan", "10", "spring");
+INSERT INTO clothes VALUES(8, "3", "socks", "white", "15", "winter");
+INSERT INTO clothes VALUES(9, "5", "tank top", "black", "6", "summer");
+INSERT INTO clothes VALUES(10, "20", "blouse", "blue", "15", "fall");
+INSERT INTO clothes VALUES(11, "50", "coat", "black", "10", "winter");
+INSERT INTO clothes VALUES(12, "35", "jacket", "gray", "15", "fall");
+INSERT INTO clothes VALUES(13, "2", "headband", "black", "3", "summer");
+INSERT INTO clothes VALUES(14, "20", "athletic top", "pink", "5", "summer");
+INSERT INTO clothes VALUES(15, "10", "hat", "white", "10", "summer");
+
+
+
+-Display all items in database
+
+SELECT * FROM clothes;
+
+
+
+-Display items and price from most expensive to least expensive
+
+SELECT category, price FROM clothes ORDER BY price DESC;
+
+
+
+-Display all of the clothers from the summer season
+
+SELECT * FROM clothes WHERE season ="summer";
+
+
+
+-Display how many itens in the store
+
+SELECT SUM(amount) FROM clothes;
